@@ -24,29 +24,29 @@ func TestBreadthFirstSearch(t *testing.T) {
 }
 
 func TestBFS(t *testing.T) {
-	g := graph.New(graph.IntHash, graph.Acyclic())
+	g := graph.New(graph.StringHash, graph.Acyclic())
 
-	_ = g.AddVertex(1)
-	_ = g.AddVertex(2)
-	_ = g.AddVertex(3)
-	_ = g.AddVertex(4)
-	_ = g.AddVertex(5)
-	_ = g.AddVertex(6)
-	_ = g.AddVertex(7)
-	_ = g.AddVertex(8)
+	_ = g.AddVertex("you")
+	_ = g.AddVertex("alice")
+	_ = g.AddVertex("bob")
+	_ = g.AddVertex("claire")
+	_ = g.AddVertex("anuj")
+	_ = g.AddVertex("peggy")
+	_ = g.AddVertex("thom")
+	_ = g.AddVertex("jonny")
 
-	_ = g.AddEdge(1, 2)
-	_ = g.AddEdge(1, 3)
-	_ = g.AddEdge(1, 4)
-	_ = g.AddEdge(3, 5)
-	_ = g.AddEdge(3, 6)
-	_ = g.AddEdge(2, 6)
-	_ = g.AddEdge(4, 7)
-	_ = g.AddEdge(4, 8)
+	_ = g.AddEdge("you", "alice")
+	_ = g.AddEdge("you", "bob")
+	_ = g.AddEdge("you", "claire")
+	_ = g.AddEdge("bob", "anuj")
+	_ = g.AddEdge("bob", "peggy")
+	_ = g.AddEdge("alice", "peggy")
+	_ = g.AddEdge("claire", "thom")
+	_ = g.AddEdge("claire", "jonny")
 
-	startElement := 1
-	seachable := 4
-	_ = graph.BFS(g, startElement, func(value int) bool {
+	startElement := "you"
+	seachable := "thom"
+	_ = graph.BFS(g, startElement, func(value string) bool {
 		fmt.Println(value)
 		if value == seachable {
 			fmt.Println("Found!")
