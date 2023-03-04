@@ -1,0 +1,29 @@
+@startuml
+
+hide empty members
+hide circle
+skinparam packageStyle rectangle
+
+package "2nd degree" {
+    package "1st degree" {
+        entity you {}
+        entity alice {}
+        entity bob {}
+    }
+
+    entity claire {}
+    entity anuj {}
+    entity peggy {}
+    entity thom {}
+    entity jonny {}
+}
+you --> alice
+you --> bob
+you --> claire
+bob --> anuj
+bob --> peggy
+alice --> peggy
+claire --> thom
+claire --> jonny
+
+@enduml

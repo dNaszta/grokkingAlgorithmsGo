@@ -24,7 +24,7 @@ func TestBreadthFirstSearch(t *testing.T) {
 }
 
 func TestBFS(t *testing.T) {
-	g := graph.New(graph.StringHash, graph.Acyclic())
+	g := graph.New(graph.StringHash, graph.Acyclic(), graph.Directed())
 
 	_ = g.AddVertex("you")
 	_ = g.AddVertex("alice")
