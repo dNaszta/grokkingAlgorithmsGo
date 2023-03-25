@@ -1,7 +1,6 @@
 package Dijkstra
 
 import (
-	"fmt"
 	"reflect"
 	"testing"
 )
@@ -22,6 +21,6 @@ func TestDijekstra(t *testing.T) {
 	result := FindLowestCosts(graph, start)
 	wanted := map[string]int{start: 0, "a": 5, "b": 2, fin: 6}
 	if !reflect.DeepEqual(result, wanted) {
-		fmt.Errorf("dijekstra failed, result: %v, wanted: %v", result, wanted)
+		t.Errorf("dijekstra failed, result: %v, wanted: %v", result, wanted)
 	}
 }
